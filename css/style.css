@@ -48,13 +48,12 @@
     text-align: center;
 }
 
-.back-to-top {
-    position: fixed;
-    display: none;
-    right: 30px;
-    bottom: 0;
-    border-radius: 0;
-    z-index: 99;
+.btn-top, i{
+  color: #F3F3F3;
+    background:#7AB730;
+
+
+  
 }
 
 .navbar-light .navbar-nav .nav-link {
