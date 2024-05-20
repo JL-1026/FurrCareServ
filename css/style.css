@@ -48,13 +48,13 @@
     text-align: center;
 }
 
-.btn-top, i{
-  color: #F3F3F3;
-    background:#7AB730;
 
 
-  
+
+i.fa-solid{
+    color: #7AB730;  
 }
+
 
 .navbar-light .navbar-nav .nav-link {
     font-family: 'Roboto', sans-serif;
