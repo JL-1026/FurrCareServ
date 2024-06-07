@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Furr Care Services</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="PP2" name="keywords">
+    <meta content="PP2" name="description">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="./img/Shop-window-greenColor.svg" >
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Roboto:wght@700&display=swap" rel="stylesheet">  
+
+    <!-- Icon Font Stylesheet -->
+    <link href="lib/flaticon/font/flaticon.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!-- Bootstrap Stylesheet -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="./css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    
+
+<a href="login.html" class="navbar-brand ms-lg-5">
+    <h1 class="m-0 text-uppercase text-dark"><i class="bi bi-shop fs-1 text-primary me-3"></i>Furr Care Service</h1>
+</a>
+
+<div class="right-container right-loaded" style="top: 0px; margin-top: 93.3335px;">
+    <div class="sign-list" id="sign-in" style="display: block">
+        <h1>Sign in to Furr Service</h1>
+        <div class="input-list">
+            <div class="input-list-con first-init" style="display: block">
+                <div class="list error">
+                    <input type="text" class="input-text the-signin-account error" placeholder="Email" data-errortext="Please enter a valid email address." data-type="account" oninput="onInputChange(this)" onpropertychange="onInputChange(this)" data-index="0" autocomplete="on">
+                </div>
+                <div class="list">
+                    <input type="password" class="input-text the-signin-password" placeholder="Password" data-errortext="The password must be between 6-20 characters long." data-type="password" oninput="onInputChange(this)" onpropertychange="onInputChange(this)" data-index="1" id="signin-password" autocomplete="on">
+                    <a href="/forgotpassword?next=https%3A%2F%2Fwww.mockplus.com%2Fblog%2Fpost%2Flogin-page-examples&amp;source=web-rp&amp;plugin_code=" class="right-text clickable" id="forget-password">Forgot password</a>
+                </div>
+                <div class="submit">
+                  <div class="error-text-container">
+                    <div class="error-text">Please enter a valid email address.</div>
+                  </div>
+                  <div class="button disabled" id="normal-login">Sign in</div>
+                </div>
+            </div>
+        </div>
+        <div class="other-text">Don't have an account?&nbsp;<a href="/signup?next=https%3A%2F%2Fwww.mockplus.com%2Fblog%2Fpost%2Flogin-page-examples&amp;source=web-rp&amp;plugin_code=" class="red">Sign up</a></div>
+        <div class="other-sign-type">
+            <div class="left"><span>Or sign in with</span></div>
+            <div class="right">
+                <a href="javascript:void(0);" title="Google" class="icon" style="background-image: url('/images/sign-google.png')" id="googleButton" data-client_id="490986521215-tlbf6t4926ql3hsb9a97p1vrsdam7h17.apps.googleusercontent.com" data-login_uri="https://user.mockplus.com/signup"></a>
+    
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                <!-- BEGIN Pre-requisites -->
+<!-- <script src="https://apis.google.com/js/client:platform.js?onload=start" async="" defer="" gapi_processed="true"></script> -->
+<!-- END Pre-requisites -->
+<!-- <script>  
+function start() {
+  gapi.load('auth2', function() {
+    gapi.auth2.init({
+      client_id: '490986521215-tlbf6t4926ql3hsb9a97p1vrsdam7h17.apps.googleusercontent.com',
+      // Scopes to request in addition to 'profile' and 'email'
+      scope: 'email profile',
+      fetch_basic_profile: false
+    });
+  });
+}
+
+$('#googleButton').click(function() {
+  var auth2 = gapi.auth2.getAuthInstance();      
+  if (typeof auth2 !== 'undefined') {
+    auth2.signIn().then(function(authResult) {
+      var profile = auth2.currentUser.get().getBasicProfile();
+      var googleEmail = profile.getEmail();
+      var data = {
+        code: '2021-05-22 new function signin',
+        email: googleEmail,
+        next: next,
+        source: source,
+        plugin_code: plugin_code,
+      };
+      googleLogin(data);   
+    });     
+    // auth2.grantOfflineAccess().then(signInCallback); // 这个是配合signInCallback方法使用，但存在用户信息没有立即更新，所以更换了方法。
+  } else {
+    showReloadMessage('Please check your network settings and ', 'try again.', window.location.href);
+  }
+});
+
+function signInCallback(authResult) {
+  if (authResult['code']) {
+    if (auth2.isSignedIn.get()) {
+      var profile = auth2.currentUser.get().getBasicProfile();
+      var googleEmail = profile.getEmail();
+      // console.log('ID: ' + profile.getId());
+      // console.log('Full Name: ' + profile.getName());
+      // console.log('Given Name: ' + profile.getGivenName());
+      // console.log('Family Name: ' + profile.getFamilyName());
+      // console.log('Image URL: ' + profile.getImageUrl());
+      // console.log('Email: ' + profile.getEmail());
+    }
+    var data = {
+      code: authResult['code'],
+      email: googleEmail,
+      next: next,
+      source: source,
+      plugin_code: plugin_code,
+    };
+    googleLogin(data);
+  } else {
+    showReloadMessage('Please check your network settings and ', 'try again.', window.location.href);
+  }
+}
+
+function googleLogin (data) {
+  showLoading();
+  $.post('/google-login', data, function (res) {
+    hideLoading();
+    if (res.code === 0) {
+      window.location.href = res.payload.nextURL;
+      return;
+    }
+    showMessage(res.message);
+  });
+}
+
+</script> -->
+
+                <a href="https://open.larksuite.com/connect/qrconnect/page/sso/?redirect_uri=https://user.mockplus.com/lark?plugin_code=&amp;app_id=cli_9ecaf77e03aed105&amp;state=init" title="Lark" class="icon" style="background-image: url('/images/sign-lark.png')"></a>
+
+            </div>
+        </div>
+    </div>
+</div>

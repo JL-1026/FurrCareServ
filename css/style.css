@@ -47,10 +47,6 @@
     padding-right: 0;
     text-align: center;
 }
-
-
-
-
 i.fa-solid{
     color: #7AB730;  
 }
@@ -454,4 +450,16 @@ i.fa-solid{
 
 .blog-item a:hover i::after {
     width: 50px;
+}
+
+/* LOGIN PAGE */
+
+.main-form{
+    background-color: #A1DD70;
+    border-radius: 10px;
+}
+
+.form-icon{
+  display: flex;
+  justify-content: center;
 }
