@@ -1,0 +1,9 @@
+.main-form{
+    background-color: #A1DD70;
+    border-radius: 10px;
+}
+
+.form-icon{
+  display: flex;
+  justify-content: center;
+}
